@@ -1,17 +1,29 @@
 package com.example.pddmanager;
 
 import android.util.Log;
+import android.view.View;
 
 import androidx.constraintlayout.solver.GoalRow;
+import androidx.lifecycle.MutableLiveData;
 
+import com.example.pddmanager.request.ApiRequest;
 import com.example.pddmanager.request.LoginRequest;
+import com.example.pddmanager.result.ApiResult;
+import com.example.pddmanager.result.GetMoreResult;
+import com.example.pddmanager.result.LoginResult;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -95,11 +107,11 @@ public class MyOkHttpApi {
 
 
     /*
-    * 5.doPost方法,用Form格式傳遞參數
-    *@param:1.String url =>連線網址
-    *@param:2.Map<String, String> map => key:value
-    *@param:3.OkHttpCallBack okHttpCallBack => 自訂的CallBack街口
-    * */
+     * 5.doPost方法,用Form格式傳遞參數
+     *@param:1.String url =>連線網址
+     *@param:2.Map<String, String> map => key:value
+     *@param:3.OkHttpCallBack okHttpCallBack => 自訂的CallBack街口
+     * */
     public void doPostFormBody(String url, Map<String, String> map, OkHttpCallBack okHttpCallBack) {
         MyCallBack myCallBack = new MyCallBack(okHttpCallBack);
         FormBody.Builder formBuilder = new FormBody.Builder();
@@ -123,9 +135,9 @@ public class MyOkHttpApi {
 
 
     /*6.javabean轉成Map
-    *@param:Object javabean => 預轉成Map的javabean
-    *@return:Map<String, String>
-    * */
+     *@param:Object javabean => 預轉成Map的javabean
+     *@return:Map<String, String>
+     * */
     public static Map<String, String> javaBeanToMap(Object javabean) {
         Gson gson = new Gson();
 
@@ -146,23 +158,48 @@ public class MyOkHttpApi {
      *@param:Object javabean => 預轉成List的javabean
      *@return:List<Object>
      * */
-    public static List<Object> javaBeanToList(Object javabean) {
+    public static<T>List<GetMoreResult> javaBeanToList(Object javabean) {
         Gson gson = new Gson();
         String json = gson.toJson(javabean);
-        List<Object> list = gson.fromJson(json,new TypeToken<List<Object>>(){}.getType());
+        List<GetMoreResult> list = gson.fromJson(json, new TypeToken<List<Object>>() {
+        }.getType());
         return list;
     }
 
     /* 8.將指定的字串Json,跟要查詢的節點名稱傳入回傳節點的值
-    * */
-    public static String getParaFromJson(String json ,String param){
+     *@param: 1.String json => 要解析的Json字串
+     *@param: 2.String param => 要查詢的節點
+     *  */
+    public static String getParaFromJson(String json, String param) {
         //parse(String json):將Json字串解析成為JsonTree(要解新的Json字串)(回傳JsonElement)
         //getAsJsonObject():取得JsonObject(回傳JsonObject);
 
-        JsonElement jsonElement =  new JsonParser().parse(json);//將Json字串解析成為JsonTree(要解新的Json字串)(回傳JsonElement)
+        JsonElement jsonElement = new JsonParser().parse(json);//將Json字串解析成為JsonTree(要解新的Json字串)(回傳JsonElement)
         JsonObject jsonObject = jsonElement.getAsJsonObject();//取得JsonObject(回傳JsonObject);
         String value = jsonObject.get(param).toString();
-        Log.v(TAG,"jsonElement:" + jsonElement.toString() +"/value:" + value);
+        Log.v(TAG, "jsonElement:" + jsonElement.toString() + "/value:" + value);
         return null;
     }
+
+    /* 9.解資料結構{data:[{}]}方法 return => String json
+    *@param: 1.String body => response.body的資料結構
+    *@param: 2.要取得的資料結構節點
+    * */
+    public static String getStringJson(String body, String param) {
+        String json = null;
+        try {
+            JSONObject jsonObject = new JSONObject(body);
+            String data = jsonObject.getString(param);
+            JSONArray jsonArray = new JSONArray(data);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsobject = jsonArray.getJSONObject(i);
+                json = jsobject.toString();
+                Log.v(TAG,json);
+            }
+        } catch (JSONException e) {
+            Log.v(TAG, "getStringJson => 錯誤:" + e.toString());
+        }
+        return json;
+    }
+
 }

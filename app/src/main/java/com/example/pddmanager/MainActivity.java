@@ -8,8 +8,12 @@ import android.view.View;
 
 import com.example.pddmanager.request.ApiRequest;
 import com.example.pddmanager.request.LoginRequest;
+import com.example.pddmanager.result.ApiResult;
+import com.example.pddmanager.result.GetMoreResult;
 import com.example.pddmanager.result.LoginResult;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 
 import org.json.JSONArray;
@@ -17,7 +21,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.Call;
@@ -33,7 +39,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
     private String url = "https://shop.ljz789.com/index.php?store_id=8";
     private String TAG = "hank";
-
+    private List<GetMoreResult> getMoreResultList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -259,11 +265,78 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //6.查詢Json字串中的節點欄位資料
     public void getParamFromJson(View view) {
         LoginRequest loginRequest = new LoginRequest("04111111","123456","aa");
         Gson gson = new Gson();
         String json = gson.toJson(loginRequest);
-
         MyOkHttpApi.getParaFromJson(json,"phone");
     }
+
+
+    public void getMore(View view) {
+        final Map<String,String> map = new HashMap<>();
+        map.put("module","app");
+        map.put("action","index");
+        map.put("app","get_more");
+        map.put("page","0");
+        MyOkHttpApi.instance().doPostFormBody(url, map, new MyOkHttpApi.OkHttpCallBack() {
+            @Override
+            public void onFailure(IOException e) {
+
+            }
+
+            @Override
+            public void onSuccess(Response response) {
+                if (response.isSuccessful()) {
+                    try {
+                        String json = MyOkHttpApi.getStringJson(response.body().string(),"data");
+                        Gson gson = new Gson();
+                        GetMoreResult getMoreResult = gson.fromJson(json,GetMoreResult.class);
+                        getMoreResultList = new ArrayList<>();
+                        getMoreResultList.add(getMoreResult);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    public void API(View view) {
+
+
+    }
+
+
+//      try {
+//        //{"code":200,"data":[{"id":"669","name":"\u53cc\u6e29\u63a7\u6dae\u70e4\u4e00\u4f53\u9505\u7535\u70e7\u70e4\u76d8\u7535\u70e4\u7089\u714e\u70e4\u6cb9\u70b8\u70e4\u8089\u9505\u7eb8\u4e0a\u70e4\u8089","yprice":"299.00","price":"199.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1569035739753.jpeg","volume":"29"},{"id":"817","name":"\u6e58\u6e58\u6c34\u9f99\u5934\u52a0\u70ed\u5668","yprice":"280.00","price":"199.99","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1573625661756.jpeg","volume":"9"},{"id":"573","name":"\u84dd\u6708\u4eae\u6d17\u8863\u6db28\u74f6*3kg","yprice":"390.00","price":"299.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1563347889594.png","volume":"9"},{"id":"208","name":"\u7537\u58eb\u81ea\u8c6a\u725b\u76ae\u8170\u5e26","yprice":"120.00","price":"96.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/15556403304.jpeg","volume":"7"},{"id":"265","name":"\u81ea\u6e05\u6d17\u91cf\u5b50\u78c1\u5316\u76f4\u996e\u6c34\u673a\u5c0f\u5206\u5b50\u56e2\u6c34\u80fd\u91cf\u6d3b\u6027\u6d3b\u5316\u9632\u57a2\u9664\u57a2\u51c0\u6c34\u5668","yprice":"1999.00","price":"1699.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1558075743798.jpeg","volume":"6"},{"id":"1372","name":"\u7f8e\u5f0f\u8f7b\u5962\u771f\u76ae\u6c99\u53d1\u5ba2\u5385\u540e\u73b0\u4ee3\u6e2f\u5f0f\u5927\u5c0f\u6237\u578b","yprice":"5000.00","price":"5000.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/app\/1587003856727.png","volume":"4"},{"id":"673","name":"\u5fae\u6c14\u6ce1\u6d01\u80a4\u5b9d\u9664\u6c2f\u6c90\u6d74\u51c0\u6c34\u5668\u8d1f\u6c27\u79bb\u5b50\u7f8e\u5bb9\u7f8e\u80a4\u6ce1\u6fa1SPA\u5fae\u7eb3\u7c73\u6c14\u6ce1\u673a","yprice":"2799.00","price":"1888.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1569045033110.jpeg","volume":"4"},{"id":"815","name":"\u5fb7\u56fd316\u4e0d\u9508\u94a2\u7092\u83dc\u9505\u4e0d\u7c98\u9505\u65e0\u6d82\u5c42\u5c11\u6cb9\u70df\u5bb6\u7528\u7535\u78c1\u7089\u71c3\u7164\u6c14\u7076\u4e13\u7528","yprice":"480.00","price":"399.99","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1573282303365.jpeg","volume":"3"},{"id":"1669","name":"\u8bbe\u8ba1\u591a\u8fb9\u5f62\u4e94\u5206\u8896\u7eaf\u8272\u77ed\u8896T\u6064\u5973\u590f","yprice":"480.00","price":"464.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1587554941944.jpeg","volume":"2"},{"id":"1665","name":"\u8d85\u706bcec\u4e5d\u5206\u4f11\u95f2\u8fd0\u52a8\u88e4\u7537\u97e9\u7248\u6f6e\u6d41\u590f\u5b63\u8584","yprice":"60.00","price":"60.00","imgurl":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1587550707978.jpeg","volume":"2"}],"message":"\u64cd\u4f5c\u6210\u529f"}
+//        //資料結構{data:[{}]}
+//        // 先解JSONOBJECT拿到  =>data:[{}]
+//        //在解JSONARRAY=> 拿到{id:669,name:双温控涮烤一体锅电烧烤盘电烤炉煎烤油炸烤肉锅纸上烤肉}這個Json{}物件
+//        //就可以用Gson.formJson轉型成類別
+//        String msg = response.body().string();
+//        Log.v("hank",msg);
+//        try {
+//            JSONObject jsonObject = new JSONObject(msg);
+//            String data = jsonObject.getString("data");
+//            Log.v(TAG,"data:" + data);
+//            JSONArray jsonArray = new JSONArray(data);
+//            for (int i = 0; i < jsonArray.length(); i++) {
+//                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+//                Log.v(TAG, "jsonObject1:" + jsonObject1);
+//                String json = jsonObject1.toString();
+//                Gson gson = new Gson();
+//                GetMoreResult getMoreResult = gson.fromJson(json,GetMoreResult.class);
+//                String name = getMoreResult.getName();
+//                Log.v(TAG,"name:" + name +"\n");
+//            }
+//            Log.v(TAG, "data:" + data);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
 }
