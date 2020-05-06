@@ -1,0 +1,128 @@
+{
+  "code": 200,
+  "data": {
+    "logo": "",
+    "banner": [],
+    "list1": [
+      {
+        "id": "1213",
+        "subtitle": "",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1586875511605.jpeg",
+        "volume": "252",
+        "price": "100.00"
+      },
+      {
+        "id": "1024",
+        "subtitle": "Apple\/\u82f9\u679c iPhon",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1586763139121.jpeg",
+        "volume": "34",
+        "price": "3000.00"
+      },
+      {
+        "id": "1020",
+        "subtitle": "\u7537\u58eb\u77ed\u8896\u5957\u88c5\u590f\u5b632020\u65b0\u6b3e",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1586759609697.jpeg",
+        "volume": "32",
+        "price": "200.00"
+      },
+      {
+        "id": "669",
+        "subtitle": "\u53cc\u6e29\u63a7\u6dae\u70e4\u4e00\u4f53\u9505\u7535\u70e7\u70e4\u76d8\u7535\u70e4\u7089\u714e\u70e4\u6cb9\u70b8\u70e4\u8089\u9505\u7eb8\u4e0a\u70e4\u8089",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1569035739753.jpeg",
+        "volume": "30",
+        "price": "199.00"
+      },
+      {
+        "id": "1422",
+        "subtitle": "\u6e38\u620f\u5e01",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1587017671476.jpeg",
+        "volume": "18",
+        "price": "500.00"
+      },
+      {
+        "id": "1085",
+        "subtitle": "",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1586785978418.jpeg",
+        "volume": "18",
+        "price": "500.00"
+      },
+      {
+        "id": "1517",
+        "subtitle": "\u738b\u8005\u8363\u8000\u4ee3\u5145\u503c",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1587045622221.jpeg",
+        "volume": "12",
+        "price": "500.00"
+      },
+      {
+        "id": "264",
+        "subtitle": "SPE\u79bb\u5b50\u819c\u6c34\u7d20\u6c34\u676f\u9ad8\u6d53\u5ea6\u5fae\u7535\u89e3\u5bcc\u6c22\u6c34\u7535\u89e3\u6c34\u676f\u6c22\u6c27\u5206\u79bb\u517b\u751f\u6c34\u676f",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1558064265939.jpeg",
+        "volume": "12",
+        "price": "499.00"
+      },
+      {
+        "id": "1644",
+        "subtitle": "",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1587114054136.jpeg",
+        "volume": "11",
+        "price": "1000.00"
+      },
+      {
+        "id": "573",
+        "subtitle": "\u84dd\u6708\u4eae\u6d17\u8863\u6db28\u74f6*3kg",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1563347889594.png",
+        "volume": "10",
+        "price": "299.00"
+      }
+    ],
+    "list2": [],
+    "list3": [
+      {
+        "id": "669",
+        "product_title": "\u53cc\u6e29\u63a7\u6dae\u70e4\u4e00\u4f53\u9505\u7535\u70e7\u70e4\u76d8\u7535\u70e4\u7089\u714e\u70e4\u6cb9\u70b8\u70e4\u8089\u9505\u7eb8\u4e0a\u70e4\u8089",
+        "subtitle": "\u53cc\u6e29\u63a7\u6dae\u70e4\u4e00\u4f53\u9505\u7535\u70e7\u70e4\u76d8\u7535\u70e4\u7089\u714e\u70e4\u6cb9\u70b8\u70e4\u8089\u9505\u7eb8\u4e0a\u70e4\u8089",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1569035739753.jpeg",
+        "volume": "30",
+        "price": "199.00",
+        "yprice": "299.00"
+      },
+      {
+        "id": "817",
+        "product_title": "\u6e58\u6e58\u6c34\u9f99\u5934\u52a0\u70ed\u5668",
+        "subtitle": "\u6e58\u6e58\u6c34\u9f99\u5934\u52a0\u70ed\u5668",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1573625661756.jpeg",
+        "volume": "10",
+        "price": "199.99",
+        "yprice": "280.00"
+      },
+      {
+        "id": "573",
+        "product_title": "\u84dd\u6708\u4eae\u6d17\u8863\u6db28\u74f6*3kg",
+        "subtitle": "\u84dd\u6708\u4eae\u6d17\u8863\u6db28\u74f6*3kg",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/1563347889594.png",
+        "volume": "10",
+        "price": "299.00",
+        "yprice": "390.00"
+      },
+      {
+        "id": "1725",
+        "product_title": "\u4e2d\u5f0f\u9c7c\u7f38\u521b\u610f\u6d41\u6c34\u5ba2\u5385\u529e\u516c\u5ba4\u62db\u8d22\u666f\u89c2\u55b7\u6cc9\u684c\u9762\u52a0\u6e7f\u5668\u62db\u8d22\u8f6c\u8fd0\u793c\u54c1",
+        "subtitle": "",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/app\/1587783362159.png",
+        "volume": "8",
+        "price": "464.00",
+        "yprice": "464.00"
+      },
+      {
+        "id": "208",
+        "product_title": "\u7537\u58eb\u81ea\u8c6a\u725b\u76ae\u8170\u5e26",
+        "subtitle": "\u7537\u58eb\u81ea\u8c6a\u725b\u76ae\u8170\u5e26",
+        "imgurl": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/8\/0\/15556403304.jpeg",
+        "volume": "7",
+        "price": "96.00",
+        "yprice": "120.00"
+      },
+      {
+        "id": "265",
+        "product_title": "\u81ea\u6e05\u6d17\u91cf\u5b50\u78c1\u5316\u76f4\u996e\u6c34\u673a\u5c0f\u5206\u5b50\u56e2\u6c34\u80fd\u91cf\u6d3b\u6027\u6d3b\u5316\u9632\u57a2\u9664\u57a2\u51c0\u6c34\u5668",
+        "subtitle": "\u81ea\u6e05\u6d17\u91cf\u5b50\u78c1\u5316\u76f4\u996e\u6c34\u673a\u5c0f\u5206\u5b50\u56e2\u6c34\u80fd\u91cf\u6d3b\u6027\u6d3b\u5316\u9632\u57a2\u9664\u57a2\u51c0\u6c34\u5668"

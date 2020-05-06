@@ -1,0 +1,47 @@
+{"code":200,"data": {
+  "user": {
+    "headimgurl": null,
+    "user_name": "\u6211",
+    "money": "43.00",
+    "score": "0.00",
+    "mobile": "13232236359",
+    "zhenzhu": "0.00",
+    "zhanghao": "13232236359",
+    "is_vip": "0",
+    "real_name": "\u674e\u9806\u9032",
+    "user_id": "z3595",
+    "relationId": null,
+    "is_pay": false,
+    "is_clock": 0,
+    "ysbflag": "1",
+    "coupon_num": 0,
+    "childs_num": "275",
+    "grade": "\u7ea7\u522b\uff1a\u4e1a\u52a1\u5458",
+    "adr_flag": 0
+  },
+  "mch_id": 0,
+  "sys_role": [
+    {
+      "path": "\/pagesI\/member\/index",
+      "sys_name": "\u4f1a\u5458\u7cfb\u7edf",
+      "imgurl": "http:\/\/api1.xhdncppf.com\/upload\/Images\/app\/static\/img\/yao_back.png"
+    },
+    {
+      "path": "\/pagesH\/my\/phone_chong",
+      "sys_name": "\u63a8\u8350\u529e\u5361",
+      "imgurl": "http:\/\/api1.xhdncppf.com\/upload\/Images\/app\/static\/img\/phone-chong.png"
+    }
+  ],
+  "mch_type": -1,
+  "th": 0,
+  "dfk_num": 0,
+  "dfh_num": 0,
+  "dsh_num": 0,
+  "dpj_num": 0,
+  "logo": "https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/image_8\/1542895065481.png",
+  "company": "\u81fb\u65b9\u4fbf\u5546\u57ce",
+  "collection_num": "0",
+  "footprint_num": "798"
+},"message":"\u6210\u529f"}
+
+

@@ -135,8 +135,8 @@ public class MyOkHttpApi {
 
 
     /*6.javabean轉成Map
-     *@param:Object javabean => 預轉成Map的javabean
-     *@return:Map<String, String>
+     *@param =>Object javabean:預轉成Map的javabean
+     *@return =>Map<String, String>:回傳JsonMapo格式
      * */
     public static Map<String, String> javaBeanToMap(Object javabean) {
         Gson gson = new Gson();

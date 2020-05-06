@@ -71,4 +71,56 @@
         android:layout_height="wrap_content"/>
 
 
+    <Button
+        android:onClick="myAuth"
+        android:text="myAuth"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:onClick="user"
+        android:text="user"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:onClick="getcon"
+        android:text="getcon"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="aplyauth_realname"
+        android:text="aplyauth_realname"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="index1"
+        android:text="index1"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="guided_graph"
+        android:text="guided_graph"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="userlogin"
+        android:text="userlogin"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
