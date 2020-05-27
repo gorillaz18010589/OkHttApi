@@ -39,7 +39,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private String url = "https://shop.ljz789.com/index.php?store_id=8";
+    private String url = "";
     private String TAG = "hank";
     private List<GetMoreResult> getMoreResultList;
     private LoginResult login;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 .add("cart_id", loginRequest.cart_id)
 //                .addEncoded(); //新增有編碼的字串參數(key:value)
                 .build();//表單建立完成
-        Log.v("hank", requestBody.toString());
+        Log.v("hank", "FormBody.Builder()" +requestBody.toString());
 
         Request request = new Request.Builder() //建立Request物件
                 .url(url)//設定Request連線的網址(要連線的字串網址)
@@ -487,8 +487,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(IOException e) {
 
             }
-
-            //            {"a":"100", "b":[{"b1":"b_value1","b2":"b_value2"},{"b1":"b_value1","b2":"b_value2"}]，"c":{"c1":"c_value1","c2":"c_value2"}}
+//            {"code":200,"data":{"user":{"headimgurl":null,"user_name":"\u6211","money":"43.00","score":"0.00","mobile":"13232236359","zhenzhu":"0.00","zhanghao":"13232236359","is_vip":"0","real_name":"\u674e\u9806\u9032","user_id":"z3595","relationId":null,"is_pay":false,"is_clock":0,"ysbflag":"1","coupon_num":0,"childs_num":"386","grade":"\u7ea7\u522b\uff1a\u4e1a\u52a1\u5458","adr_flag":0},"mch_id":0,"sys_role":[{"path":"\/pagesI\/member\/index","sys_name":"\u4f1a\u5458\u7cfb\u7edf","imgurl":"http:\/\/api1.xhdncppf.com\/upload\/Images\/app\/static\/img\/yao_back.png"},{"path":"\/pagesH\/my\/phone_chong","sys_name":"\u63a8\u8350\u529e\u5361","imgurl":"http:\/\/api1.xhdncppf.com\/upload\/Images\/app\/static\/img\/phone-chong.png"}],"mch_type":-1,"th":0,"dfk_num":0,"dfh_num":0,"dsh_num":0,"dpj_num":0,"logo":"https:\/\/zfbpic.oss-cn-beijing.aliyuncs.com\/image_8\/1542895065481.png","company":"\u81fb\u65b9\u4fbf\u5546\u57ce","collection_num":"0","footprint_num":"883"},"message":"\u6210\u529f"}
             @Override
             public void onSuccess(Response response) {
                 if (response.isSuccessful()) {
